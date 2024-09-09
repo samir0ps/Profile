@@ -2,32 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply dark:bg-neutral-800 dark:text-white bg-neutral-300 text-black
+}
+* :focus-within ,*:focus-visible{
+  outline: none;
+}
+.shadow-container {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.dark .shadow-container {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7), 
+              -4px -4px 10px rgba(255, 255, 255, 0.1);
+}
+body{
+  overflow-x: hidden;
+  scroll-behavior : smooth;
+}
+.cl-headerTitle{
+  @apply dark:text-content
+}
+.cl-headerSubtitle {
+  @apply dark:text-content/40
+}
+.cl-button__google{
+  @apply dark:bg-neutral-800 dark:hover:bg-neutral-700 transition duration-300 dark:text-content rounded-xl
+}
+.cl-button__github{
+  @apply dark:bg-white dark:text-neutral-800 rounded-xl dark:hover:bg-neutral-200 transition duration-300 
+}
+.cl-card{
+  @apply dark:text-content  dark:bg-neutral-800/50 dark:backdrop-blur-sm shadow-none 
+}
+.cl-cardBox {
+  @apply shadow-none 
+}
+.cl-formButtonPrimary{
+  box-shadow: none !important;
+  @apply bg-primary dark:bg-secondary border-none outline-none shadow-none text-content py-3 rounded-xl hover:bg-primary/90 transition duration-300 hover:text-content
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.cl-buttonArrowIcon{
+  @apply hidden 
+} 
+.cl-input{
+  @apply dark:bg-neutral-700/40 border border-neutral-600 dark:text-content py-3 rounded-xl focus:outline-none focus:shadow-none focus:ring-2 dark:ring-violet-500 ring-secondary
+}
+.cl-formFieldLabel__identifier-field ,.cl-formFieldLabel{
+  @apply dark:text-content
+}
+.cl-internal-1dauvpw{
+  @apply hidden
+}
+.cl-footer{
+  @apply dark:!bg-neutral-800/50 hidden
+}
+.bg-subtle-dots {
+  background-color: #1a202c; /* Base color (dark gray) */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px; /* Adjusts the density of the dots */
+  background-repeat: repeat; /* Repeats the pattern */
+}
+.tooltip-span{
+  @apply text-blue-400 font-semibold
+}
+
+.tooltip-p{
+  @apply text-neutral-200 text-sm font-normal
+}
+.small-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+  
+}
+
+/* From Uiverse.io by JulanDeAlb */ 
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 2em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  @apply stroke-neutral-800 dark:stroke-content
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
 }

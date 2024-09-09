@@ -1,0 +1,34 @@
+.animated-button {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5em 1em;
+  outline: none;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+}
+
+.animated-button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.45s ease-in-out;
+  @apply dark:bg-secondary bg-primary rounded-xl ring-4 ring-primary 
+}
+
+.animated-button:hover {
+  cursor: pointer;
+  @apply text-content
+}
+
+.animated-button:hover::before {
+  transform: scale(1);
+}
