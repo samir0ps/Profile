@@ -4,7 +4,7 @@ import { cn } from "@/ui/utils/cn"
 import { SignedIn, SignedOut, useClerk, useUser } from "@clerk/nextjs"
 import { AnimatePresence, motion, Variants } from "framer-motion"
 import { useAtom } from "jotai"
-import { ChevronRight, MessageCircle, HelpCircle, LogOut, Globe, User, BookOpen, BookDashed } from "lucide-react"
+import { ChevronRight, MessageCircle, HelpCircle, LogOut, Globe, User, LayoutDashboard, Home, FileText } from "lucide-react"
 import Link from "next/link"
 import { useRef, useState } from "react"
 import { UseOutSideClick } from "./components/OutsideClick"
@@ -98,7 +98,7 @@ export const NavMenu = () => {
     return (
         <AnimatePresence>
             {openMenu && <motion.div variants={variants} initial={'hidden'} animate={'visible'} exit={"hidden"} className="fixed top-16 z-[2500] h-fit max-h-screen w-fit max-w-full font-semibold overflow-hidden text-md sm:text-xl right-0 overflow-y-auto  flex flex-col gap-3 p-4 text-nowrap text-ellipsis  sm:p-6 rounded-xl dark:bg-neutral-800 bg-white shadow-lg">
-                {user?.emailAddresses[0].emailAddress === "mahmoud7samirr@gmail.com" &&<Link href={'/dashboard'}><BookDashed/>Dashboard</Link>}
+                {user?.emailAddresses[0].emailAddress === "mahmoud7samirr@gmail.com" &&<Link href={'/dashboard'} className="flex items-center gap-2"><LayoutDashboard/>Dashboard</Link>}
                 <button onClick={handleOpenChat} className="flex items-center gap-2 hover:bg-neutral-700 p-3 rounded-md transition-colors duration-200">
                     <MessageCircle className="w-5 h-5" />
                     Contact Me
@@ -108,7 +108,7 @@ export const NavMenu = () => {
                     About Me
                 </Link>
                 <Link href='/blog' className="flex items-center gap-2 hover:bg-neutral-700 p-3 rounded-md transition-colors duration-200">
-                    <BookOpen className="w-5 h-5" />
+                    <FileText className="w-5 h-5" />
                     Blog
                 </Link>
                 <SignedIn>
