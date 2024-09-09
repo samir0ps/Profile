@@ -27,7 +27,7 @@ export const UpdateNotifications = () => {
                 n.sender === email ? { ...n, unread: false } : n
             )
         )
-    }, [email, setNotifications])
+    }, [mutation,email, setNotifications])
 }
 
 

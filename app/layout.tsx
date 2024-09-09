@@ -4,13 +4,15 @@ import "./globals.css";
 import Navbar from "./ui/Navbar";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
-import {ClerkProvider} from "@clerk/nextjs"
+import { ClerkProvider } from "@clerk/nextjs";
 import ChatPopup from "./ui/components/chat";
 import Provider from "./ui/components/provider";
 import Snackbar from "./ui/Message";
 import ConnectComponent from "./ui/components/ConnectComponent";
-const comfortaa = Comfortaa({weight:"400" ,subsets:['greek'] })
-const ThemeProvider = dynamic(()=>import("./ui/Themeprovider") ,{ssr:false})
+
+const comfortaa = Comfortaa({ weight: "400", subsets: ['latin', 'greek'] });
+const ThemeProvider = dynamic(() => import("./ui/Themeprovider"), { ssr: false });
+
 export const metadata: Metadata = {
   title: "Profile",
   description: "Samir's profile",
@@ -18,10 +20,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const theme = cookies().get("__theme__")?.value || "system";
+
   return (
     <ClerkProvider>
       <Provider>
@@ -29,14 +32,13 @@ export default function RootLayout({
           <html
             className={theme}
             lang="en"
-            >
+          >
             <body className={comfortaa.className}>
-              <ThemeProvider attribute="class" defaultTheme={theme} enableSystem>
-                <Navbar/>
-                
+              <ThemeProvider>
+                <Navbar />
                 {children}
-                <ChatPopup/>
-                <Snackbar/>
+                <ChatPopup />
+                <Snackbar />
               </ThemeProvider>
             </body>
           </html>

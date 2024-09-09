@@ -2,6 +2,7 @@
 import { UseOutSideClick } from '@/app/ui/components/OutsideClick'
 import { AnimatePresence, motion, Variants } from 'framer-motion'
 import { Users, TrendingUp, Settings, AlertCircle } from 'lucide-react'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState, ReactNode, useRef, memo } from 'react'
 
@@ -55,7 +56,7 @@ const Dashboard = memo(({users}: {users: UserType[]}) => {
     >
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl font-extrabold text-neutral-400 mb-12 text-center">
-          Samir's Dashboard
+          Samir&apos;s Dashboard
         </h1>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -146,7 +147,7 @@ const UserCard: React.FC<UserCardProps> = memo(({ email, imageUrl }) => {
         whileTap={{ scale: 0.95 }}
         className="bg-black border-2 flex items-center relative border-neutral-800 border-opacity-40 rounded-2xl p-6 cursor-pointer"
       >
-        <img src={imageUrl} alt={email} className="w-12 h-12 rounded-full mr-4 border-2 border-white" />
+        <Image width={32} height={32} src={imageUrl} alt={email} className="w-12 h-12 rounded-full mr-4 border-2 border-white" />
         <div className='flex-1 flex overflow-hidden'>
           <p className="text-sm font-bold text-neutral-300 overflow-hidden text-nowrap text-ellipsis w-fit max-w-3/4">{email}</p>
         </div>

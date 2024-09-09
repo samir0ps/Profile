@@ -14,10 +14,10 @@ const Navbar = () => {
     >
         <motion.div whileHover={{scale:1.2}} className="flex px-5 py-3 justify-between w-fit gap-5 max-w-md bg-black border border-collapse border-neutral-700 rounded-full shadow-xl shadow-black/30">
         {navItems.map((item, index) => (
-            <Link href={item.href || ''}>
+            <Link key={index} href={item.href || ''}>
               <Tooltip content={item.label}>
                   <motion.div
-                  key={index}
+                  
                   className="flex flex-col items-center justify-center w-9 h-9 bg-neutral-900 border border-neutral-700 rounded-full shadow-md cursor-pointer"
                   whileHover={{ scale: 1.24}}
                   whileTap={{ scale: 0.9 }}

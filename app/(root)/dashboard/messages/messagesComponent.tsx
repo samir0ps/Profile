@@ -16,7 +16,7 @@ import { useAtom } from 'jotai';
 import { notificationsAtom, unreadCountAtom, usersAtom } from '@/clientActions/States';
 import { UpdateNotifications } from './utils';
 import { cn } from '@/ui/utils/cn';
-
+import Image from "next/image"
 export type Message = {
   from: string;
   content: string;
@@ -177,7 +177,7 @@ const MessagesPage = () => {
                       onClick={() => toggleChatRoom(user.email)}
                       className={`flex items-center relative space-x-3 overflow-hidden p-3 rounded-xl hover:bg-neutral-900 cursor-pointer transition-all duration-300 ${chatRoom === user.email ? 'bg-neutral-800 shadow-inner' : ''}`}
                     >
-                      <img src={user.avatar} alt={user.email} className="w-12 h-12 rounded-full border-2 border-purple-400 transition-transform duration-300 hover:scale-110" />
+                      <Image width={32} height={32} src={user.avatar} alt={user.email} className="w-12 h-12 rounded-full border-2 border-purple-400 transition-transform duration-300 hover:scale-110" />
                       <span className="text-sm font-medium  text-nowrap overflow-hidden text-ellipsis text-neutral-400">{user.email}</span>
                         <>
                       <div   className={cn('  right-3 text-[12px] sticky font-bold bg-blue-300 shadow-lg shadow-black/40 rounded-full overflow-hidden text-nowrap text-ellipsis size-6 flex items-center justify-center text-neutral-700 top-1/2 -translate-y-1/2' , user.messages === 0 && "hidden")}>{user.messages}</div>

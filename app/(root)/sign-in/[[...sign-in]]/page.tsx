@@ -77,7 +77,7 @@ const Page = () => {
                             <SignIn />
                         </motion.div>
                     </div>
-            <p className="text-neutral-800 dark:text-neutral-100 space-x-1">Don't have an account yet!<Link className="text-blue-500 dark:text-pink-200 text-sm ml-1 hover:underline" href={'/sign-up'}>SignUp</Link></p>
+            <p className="text-neutral-800 dark:text-neutral-100 space-x-1">Don&apos;t have an account yet!<Link className="text-blue-500 dark:text-pink-200 text-sm ml-1 hover:underline" href={'/sign-up'}>SignUp</Link></p>
           </div>
       </div>
   )

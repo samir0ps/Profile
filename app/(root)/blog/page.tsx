@@ -24,7 +24,7 @@ export default function BlogComingSoon() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          We're crafting amazing content for you. Stay tuned!
+          We&apos;re crafting amazing content for you. Stay tuned!
         </motion.p>
         
        

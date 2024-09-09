@@ -59,8 +59,8 @@ const Navbar = () => {
     return (
         <nav className={cn('navbar flex justify-between transition duration-300 ease-linear items-center sm:h-20 h-16 right-1/2 translate-x-1/2 gap-10 fixed rounded-3xl px-10  sm:px-2 z-[1600] top-1  w-fit max-w-full' , y>0 && "shadow-md  bg-[#E2DFD0] dark:bg-[#1E201E]" , isMobile && "w-full rounded-none top-0 justify-between")}>
             <motion.div whileHover={{ scale:1.2 }} whileTap={{scale:1.1}} transition={{type:'spring' , damping : 10 , stiffness:300 ,bounce:0 , mass:0.5}} className="logo">
-                <Link href={'/'} className={cn(' mx:text-sm lg:text-2xl flex items-center  w-fit h-fit')}>
-                    <Image src={Logo || ""} width={isMobile? 32 : 36 }  height={isMobile ?32 : 36} className='text-white object-cover min-h-[24px] min-w-[24px]' alt='profile logo' />
+                <Link href={'/'} className={cn(' mx:text-sm lg:text-2xl gap-1 flex items-center  w-fit h-fit')}>
+                    <Image src={Logo || ""} width={isMobile? 32 : 34 }  height={isMobile ?32 : 34} className='text-white dark:invert object-cover min-h-[24px] min-w-[24px]' alt='profile logo' />
                     <span className={cn('md:block hidden dark:text-[#E2DFD0] text-[#31363F] font-semibold' ,spaceFont.className )}>Samir</span>
                 </Link>
             </motion.div>

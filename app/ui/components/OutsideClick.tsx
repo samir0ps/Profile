@@ -13,6 +13,6 @@ export const UseOutSideClick = (ref:RefObject<HTMLElement> | null , Callback:()=
             document.removeEventListener('mousedown'  , handleOutsideClick)
             document.removeEventListener('touchend' ,handleOutsideClick)
         }
-    } ,[])
+    } ,[ref, Callback])
 
 }

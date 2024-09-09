@@ -37,7 +37,7 @@ export default function About() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-2xl font-semibold mb-6 text-neutral-700 dark:text-teal-300"
             >
-              Hello! I'm Mahmoud Samir, a passionate Full Stack Developer from Egypt with a strong focus on creating innovative digital solutions.
+              Hello! I&apos;m Mahmoud Samir, a passionate Full Stack Developer from Egypt with a strong focus on creating innovative digital solutions.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, x: 50 }}
@@ -45,7 +45,7 @@ export default function About() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed"
             >
-              With 5 years of experience in web development, I specialize in building scalable, high-performance applications using technologies like ReactJS, NodeJS, NextJS, and TypeScript. I'm constantly evolving, working on projects like real-time chat apps, eCommerce platforms, and blogs.
+              With 5 years of experience in web development, I specialize in building scalable, high-performance applications using technologies like ReactJS, NodeJS, NextJS, and TypeScript. I&apos;m constantly evolving, working on projects like real-time chat apps, eCommerce platforms, and blogs.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, x: 50 }}
@@ -53,7 +53,7 @@ export default function About() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed"
             >
-              I love exploring new frameworks and technologies, and my work reflects a commitment to optimizing performance while creating engaging user experiences. Whether it's SvelteKit, Supabase, or TailwindCSS, I'm always pushing my limits.
+              I love exploring new frameworks and technologies, and my work reflects a commitment to optimizing performance while creating engaging user experiences. Whether it&apos;s SvelteKit, Supabase, or TailwindCSS, I&apos;m always pushing my limits.
             </motion.p>
           </div>
         </div>

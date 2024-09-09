@@ -8,4 +8,6 @@ const ConnectComponent = memo(({children}: {children: ReactNode}) => {
   return <>{children}</>
 })
 
+ConnectComponent.displayName = 'ConnectComponent'
+
 export default ConnectComponent

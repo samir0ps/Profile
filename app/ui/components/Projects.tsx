@@ -37,10 +37,10 @@ export default function Projects() {
                     >
                         <div className="relative h-48 sm:h-64">
                             <Image 
-                                
+                                width={320}
+                                height={320}
                                 src={project.imageUrl} 
-                                layout="fill"
-                                objectFit="cover"
+                                className="object-cover w-full h-full"
                                 loading="lazy"
                                 alt={`${project.title} image`}
                             />
