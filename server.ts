@@ -3,8 +3,9 @@ import next from "next";
 import { Server, Socket } from "socket.io";
 
 const dev: boolean = process.env.NODE_ENV !== "production";
-const hostname: string = "localhost";
-const port: number = 3000;
+const hostname = dev ? "localhost" : "samir-prfile.vercel.app";
+const port = 3000; // dynamic port for deployment
+
 const app = next({ dev, hostname, port });
 const handler = app.getRequestHandler();
 
@@ -13,7 +14,7 @@ app.prepare().then(() => {
 
   const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "*",
       methods: ["GET", "POST"]
     }
   });
