@@ -44,9 +44,10 @@ const Shapes = () => {
             "M0,100 Q50,150 100,100 T200,100",
             "M0,75 Q50,25 100,75 T200,75",
           ],
+          opacity: [0.8, 0.4, 0.8],
         }}
         transition={{ ...commonTransition, duration: 25 }}
-        style={{ opacity: 0.8, filter: 'blur(3px)' }}
+        style={{ filter: 'blur(5px)' }}
       />
 
       <motion.circle
@@ -54,12 +55,13 @@ const Shapes = () => {
         cy="30%"
         r={40}
         fill="url(#gradient3)"
-        
-        
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.7, 0.3, 0.7],
+        }}
         transition={{ ...commonTransition, duration: 30 }}
-        style={{ opacity: 0.7, filter: 'blur(4px)' }}
+        style={{ filter: 'blur(6px)' }}
       />
-
 
       <motion.path
         d="M 20 80 C 40 10, 65 10, 80 80 S 150 150, 180 80"
@@ -73,9 +75,10 @@ const Shapes = () => {
             "M 20 80 C 70 20, 95 20, 110 80 S 160 140, 180 80",
             "M 20 80 C 40 10, 65 10, 80 80 S 150 150, 180 80",
           ],
+          opacity: [0.5, 0.2, 0.5],
         }}
         transition={{ ...commonTransition, duration: 40 }}
-        style={{ opacity: 0.5, filter: 'blur(6px)' }}
+        style={{ filter: 'blur(8px)' }}
       />
 
       <motion.rect
@@ -87,9 +90,10 @@ const Shapes = () => {
         animate={{
           rotate: [0, 180, 360],
           scale: [1, 1.2, 0.8, 1],
+          opacity: [0.6, 0.3, 0.6],
         }}
         transition={{ ...commonTransition, duration: 20 }}
-        style={{ opacity: 0.6, filter: 'blur(2px)' }}
+        style={{ filter: 'blur(4px)' }}
       />
 
       <motion.ellipse
@@ -100,9 +104,13 @@ const Shapes = () => {
         fill="none"
         stroke="url(#gradient1)"
         strokeWidth="6"
-        
+        animate={{
+          rx: [60, 80, 40, 60],
+          ry: [40, 60, 20, 40],
+          opacity: [0.6, 0.2, 0.6],
+        }}
         transition={{ ...commonTransition, duration: 45 }}
-        style={{ opacity: 0.6, filter: 'blur(2px)', transformOrigin: 'center' }}
+        style={{ filter: 'blur(4px)', transformOrigin: 'center' }}
       />
 
     </svg>
